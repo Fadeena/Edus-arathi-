@@ -1,0 +1,86 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block head %}
+<title>User List | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/userlist.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="split-container">
+        <!-- TOP PART: STUDENTS -->
+        <section>
+            <h2 class="section-title">Students</h2>
+            <div class="table-container">
+                <table class="user-table">
+                    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Action</th></tr></thead>
+                    <tbody>
+                        {% for student in us %}
+                        <tr>
+                            <td>#{{ student.id }}</td>
+                            <td>{{ student.get_full_name }}</td>
+                            <td>{{ student.email }}</td>
+                            <td><span class="status-pill {% if student.is_active %}active{% else %}inactive{% endif %}">
+                                {{ student.is_active|yesno:"Active,Inactive" }}
+                            </span></td>
+                             <td>
+                        <a href="{% url 'userdetail' student.id %}" class="view-btn">View Details</a>
+                    </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- BOTTOM PART: INSTRUCTORS -->
+        <section>
+            <h2 class="section-title">Instructors</h2>
+            <div class="table-container">
+                <table class="user-table">
+                    <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Status</th><th>Action</th></tr></thead>
+                    <tbody>
+                        {% for tutor in tu %}
+                        <tr>
+                            <td>#{{ tutor.id }}</td>
+                            <td>{{ tutor.get_full_name }}</td>
+                            <td>{{ tutor.email }}</td>
+                            <td><span class="status-pill {% if tutor.is_active %}active{% else %}inactive{% endif %}">
+                                {{ tutor.is_active|yesno:"Active,Inactive" }}
+                            </span></td>
+                             <td>
+                        <a href="{% url 'userdetail' tutor.id %}" class="view-btn">View Details</a>
+                    </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        <section>
+            <h2 class="section-title">Pending Approvals</h2>
+            <div class="table-container" style="border-top: 4px solid #f59e0b;"> <!-- Orange accent for warning/pending -->
+                <table class="user-table">
+                <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Action</th></tr></thead>
+            <tbody>
+                {% for p in pen %}
+                <tr>
+                    <td>#{{ p.id }}</td>
+                    <td>{{ p.get_full_name }}</td>
+                    <td>{{ p.email }}</td>
+                    <td>
+                        <!-- Link to an approval view you'll need to create -->
+                        <a href="{% url 'approveuser' p.id %}" class="view-btn" style="color: #d97706;">Approve Now</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr><td colspan="4" class="no-data">No pending approvals at this time.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+    </div>
+</main>
+{% endblock %}

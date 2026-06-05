@@ -1,0 +1,106 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+MCQ Exam
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/mcqquiz.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="exam-wrapper">
+
+        <!-- SHOW QUESTIONS -->
+        {% if mcq_questions and not result %}
+
+            <div class="exam-card">
+                <h1>📝 MCQ Examination</h1>
+
+                <form method="POST" action="{% url 'mcqquiz' %}">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="submit_exam">
+
+                    {% for q in mcq_questions %}
+                    <div class="question-box">
+
+                        <h3>{{ forloop.counter }}. {{ q.question }}</h3>
+
+                        <label>
+                            <input type="radio" name="ans{{ forloop.counter }}" value="A" required>
+                            {{ q.a }}
+                        </label>
+
+                        <label>
+                            <input type="radio" name="ans{{ forloop.counter }}" value="B">
+                            {{ q.b }}
+                        </label>
+
+                        <label>
+                            <input type="radio" name="ans{{ forloop.counter }}" value="C">
+                            {{ q.c }}
+                        </label>
+
+                        <label>
+                            <input type="radio" name="ans{{ forloop.counter }}" value="D">
+                            {{ q.d }}
+                        </label>
+
+                    </div>
+                    {% endfor %}
+
+                    <button type="submit" class="submit-btn">
+                        Submit Exam
+                    </button>
+                </form>
+            </div>
+
+        {% endif %}
+
+        <!-- RESULT (FIXED CONDITION) -->
+        {% if result %}
+
+    <div class="result-card">
+    <h1>🏆 Exam Result</h1>
+
+    <p class="score-box">
+        Your Score :
+        <span>{{ score }}</span> / {{ total }}
+    </p>
+
+    {% for item in result %}
+    <div class="answer-box">
+
+        <h3>{{ forloop.counter }}. {{ item.question }}</h3>
+
+        <p><strong>Your Answer:</strong> {{ item.answer }}</p>
+        <p><strong>Correct Answer:</strong> {{ item.correct }}</p>
+        <p><strong>Explanation:</strong> {{ item.explanation }}</p>
+
+    </div>
+    {% endfor %}
+
+    <a href="{% url 'quiz' %}" class="back-btn">Back to Quiz</a>
+</div>
+
+{% endif %}
+        <!-- DEFAULT STATE -->
+        {% if not mcq_questions and score is None %}
+
+        <div class="empty-card">
+            <h1>📝 No Exam Started Yet</h1>
+            <p>Click Start Exam from Quiz page.</p>
+            <a href="{% url 'quiz' %}" class="back-btn">Back to Quiz</a>
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+{% endblock %}

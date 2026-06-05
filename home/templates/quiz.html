@@ -1,0 +1,36 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+Quiz
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/quiz.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="quiz-wrapper">
+
+
+        <div class="quiz-option-grid">
+
+            <!-- View Questions -->
+            <div class="quiz-card">
+                <div class="icon">📘</div>
+                <h2>View Related Questions</h2>
+                <p>See course-based important questions and answers generated from your subjects.</p>
+
+                <form method="POST" action="{% url 'viewquiz' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-primary">
+                        View Questions
+                    </button>
+                </form>
+            </div>
+
+
+{% endblock %}

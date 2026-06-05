@@ -1,0 +1,93 @@
+/* User Detail Page Styling */
+.detail-container {
+    margin-left: 240px; /* Matches sidebar width */
+    padding: 40px;
+    min-height: 100vh;
+}
+
+.detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.role-badge {
+    background: #dcfce7;
+    color: #166534;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.info-box {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.info-box h3 {
+    font-size: 14px;
+    color: #94a3b8;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.course-section {
+    margin-top: 40px;
+}
+
+.course-section h3 {
+    color: #1e293b;
+    border-left: 4px solid #2563eb;
+    padding-left: 15px;
+}
+
+.detail-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.detail-table th {
+    background: #f1f5f9;
+    text-align: left;
+    padding: 12px;
+}
+
+.detail-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 40px;
+    background: #0f172a;
+    color: white;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #2563eb;
+}

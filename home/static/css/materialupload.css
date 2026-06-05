@@ -1,0 +1,78 @@
+/* Layout Alignment */
+.main-content {
+    margin-left: 240px; /* Matches your sidebar width */
+    padding: 40px;
+    background: #f4f7fc;
+    min-height: 100vh;
+}
+
+.content-header h1 {
+    color: #0f172a;
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+/* Form Container */
+.upload-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+}
+
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+/* Styling Django Form Widgets */
+.input-group input, 
+.input-group select, 
+.input-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+/* Upload Button */
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #1e40af;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 1000px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}

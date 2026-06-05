@@ -1,0 +1,139 @@
+/* ===============================
+   Active Courses Page
+================================= */
+
+.course-wrapper{
+    padding:40px;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Header */
+.course-header{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#ffffff;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:30px;
+    box-shadow:0 10px 25px rgba(37,99,235,0.18);
+}
+
+.course-header h1{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.course-header p{
+    font-size:15px;
+    opacity:0.95;
+}
+
+/* Grid */
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+/* Card */
+.course-card{
+    background:#ffffff;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.06);
+    transition:0.3s ease;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 30px rgba(0,0,0,0.08);
+}
+
+.course-card h2{
+    font-size:22px;
+    color:#0f172a;
+    margin-bottom:12px;
+}
+
+.desc{
+    font-size:14px;
+    color:#64748b;
+    line-height:1.7;
+    min-height:70px;
+    margin-bottom:15px;
+}
+
+/* Info */
+.course-info{
+    margin-bottom:20px;
+}
+
+.course-info span{
+    display:inline-block;
+    background:#eff6ff;
+    color:#2563eb;
+    padding:8px 14px;
+    border-radius:10px;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* Button */
+.btn-view{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#ffffff;
+    padding:12px;
+    border-radius:12px;
+    font-weight:700;
+    transition:0.3s ease;
+}
+
+.btn-view:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 20px rgba(37,99,235,0.18);
+}
+
+/* Empty Box */
+.empty-box{
+    grid-column:1/-1;
+    background:#ffffff;
+    padding:40px;
+    text-align:center;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+
+.empty-box h3{
+    font-size:24px;
+    color:#0f172a;
+    margin-bottom:10px;
+}
+
+.empty-box p{
+    color:#64748b;
+    font-size:15px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .course-wrapper{
+        padding:20px;
+    }
+
+    .course-header{
+        padding:22px;
+    }
+
+    .course-header h1{
+        font-size:24px;
+    }
+
+    .course-card{
+        padding:20px;
+    }
+}

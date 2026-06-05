@@ -1,0 +1,113 @@
+:root {
+    --primary-blue: #1e3a8a;
+    --dark-blue: #0f172a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--dark-blue);
+}
+
+
+/* Logo Styling */
+
+
+.logo i {
+    font-size: 1.5rem;
+}
+
+/* Nav Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--white);
+}
+
+/* Auth Section */
+.auth-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-login {
+    text-decoration: none;
+    color: var(--white);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.btn-register {
+    text-decoration: none;
+    color: var(--primary-blue);
+    background: var(--white);
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.user-icon {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.4rem;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+/* Add this to your base.css to style the logo image */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.logo-img {
+    height: 40px; /* Adjust size based on your logo preference */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Nav links and other styles remain the same from previous step */
+.main-header {
+    width: 100%;
+    padding: 20px 8%;
+    position: absolute;
+    top: 0;
+    z-index: 1000;
+    background: transparent;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

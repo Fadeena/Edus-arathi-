@@ -1,0 +1,258 @@
+/* static/css/explore_courses.css */
+
+.course-page{
+    padding:40px;
+    background:#f5f7ff;
+    min-height:100vh;
+}
+
+.title{
+    text-align:center;
+    font-size:38px;
+    margin-bottom:40px;
+    color:#1e3a8a;
+}
+
+.course-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.course-card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-5px);
+}
+
+.course-card h2{
+    color:#2563eb;
+    margin-bottom:10px;
+}
+
+.course-card p{
+    color:#555;
+    margin-bottom:15px;
+}
+
+.duration,.date{
+    display:block;
+    margin-bottom:8px;
+    color:#444;
+    font-weight:600;
+}
+
+.course-card ul{
+    padding-left:20px;
+    margin-top:10px;
+}/* static/css/explore_courses.css */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f8ff;
+}
+
+/* Navbar */
+.navbar{
+    background:linear-gradient(90deg,#001f54,#0039a6);
+    color:white;
+    padding:18px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:white;
+    background:#ff9800;
+    padding:10px 18px;
+    border-radius:8px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#e68900;
+}
+
+/* Hero Section */
+.hero-section{
+    height:320px;
+    background:url('/static/images/coursebg.jpg') center/cover no-repeat;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+    position:relative;
+    color:white;
+    z-index:2;
+    width:80%;
+}
+
+.hero-content h1{
+    font-size:52px;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:20px;
+    line-height:1.6;
+}
+
+/* Course Section */
+.course-section{
+    padding:60px 40px;
+}
+
+.section-title{
+    text-align:center;
+    font-size:40px;
+    color:#002366;
+    margin-bottom:45px;
+}
+
+.course-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.course-card{
+    background:white;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.course-card:hover{
+    transform:translateY(-8px);
+}
+
+.course-card h2{
+    color:#0047ab;
+    margin-bottom:12px;
+    font-size:28px;
+}
+
+.desc{
+    color:#555;
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.details{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:18px;
+    color:#333;
+    font-weight:bold;
+}
+
+.tutor-box{
+    background:#eef4ff;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+.tutor-box h4{
+    margin-bottom:10px;
+    color:#0039a6;
+}
+
+.tutor-box ul{
+    padding-left:20px;
+}
+
+.tutor-box li{
+    margin-bottom:6px;
+}
+
+/* Buttons */
+.card-btns{
+    text-align:center;
+}
+
+.join-btn{
+    text-decoration:none;
+    background:linear-gradient(90deg,#00b894,#00cec9);
+    color:white;
+    padding:12px 25px;
+    border-radius:10px;
+    font-weight:bold;
+    display:inline-block;
+    transition:0.3s;
+}
+
+.join-btn:hover{
+    transform:scale(1.05);
+}
+
+/* Empty */
+.empty-box{
+    text-align:center;
+    grid-column:1/-1;
+    background:white;
+    padding:50px;
+    border-radius:15px;
+}
+
+/* Footer */
+.footer{
+    background:#001f54;
+    color:white;
+    text-align:center;
+    padding:18px;
+    margin-top:40px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .navbar{
+        flex-direction:column;
+        gap:15px;
+        padding:20px;
+    }
+
+    .hero-content h1{
+        font-size:36px;
+    }
+
+    .hero-content p{
+        font-size:17px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+}

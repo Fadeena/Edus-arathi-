@@ -1,0 +1,60 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/adminhome.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main class="main-content">
+
+<!-- Hero Section -->
+<section class="hero-section">
+<img src="{% static 'images/adminhomeimg.jpeg' %}" alt="">
+</section>
+
+
+<!-- Cards -->
+<section class="metrics-grid">
+
+<div class="metric-card">
+<div class="card-icon">👥</div>
+<div class="card-info">
+<h3>Total Users</h3>
+<p>1,250</p>
+</div>
+</div>
+
+
+<div class="metric-card active-today">
+<div class="card-icon">⚡</div>
+<div class="card-info">
+<h3>Active Today</h3>
+<p>320</p>
+</div>
+</div>
+
+
+<div class="metric-card">
+<div class="card-icon">📚</div>
+<div class="card-info">
+<h3>Courses</h3>
+<p>45</p>
+</div>
+</div>
+
+
+<div class="metric-card danger">
+<div class="card-icon">⚠️</div>
+<div class="card-info">
+<h3>At-Risk Students</h3>
+<p>28</p>
+</div>
+</div>
+
+</section>
+
+</main>
+
+{% endblock %}

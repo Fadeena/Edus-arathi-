@@ -1,0 +1,128 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+
+{% block head %}
+<title>Student Doubts</title>
+{% endblock %}
+
+{% block style %}
+<style>
+.chat-container{
+    max-width:950px;
+    margin:30px auto;
+    background:#ffffff;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+.page-title{
+    font-size:28px;
+    font-weight:700;
+    color:#2c3e50;
+    margin-bottom:25px;
+}
+
+.doubt-card{
+    background:#f8f9fa;
+    padding:18px;
+    border-radius:12px;
+    margin-bottom:20px;
+    border-left:5px solid #007bff;
+}
+
+.student-name{
+    font-size:18px;
+    font-weight:600;
+    color:#34495e;
+    margin-bottom:8px;
+}
+
+.doubt-msg{
+    font-size:15px;
+    color:#444;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.reply-form textarea{
+    width:100%;
+    min-height:90px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    padding:12px;
+    resize:none;
+    font-size:15px;
+}
+
+.reply-form button{
+    margin-top:10px;
+    background:#28a745;
+    color:#fff;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:15px;
+}
+
+.reply-form button:hover{
+    background:#218838;
+}
+
+.old-reply{
+    margin-top:12px;
+    padding:10px;
+    background:#eafaf1;
+    border-radius:8px;
+    color:#1e7e34;
+}
+
+.no-data{
+    text-align:center;
+    padding:40px;
+    color:#777;
+    font-size:18px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="chat-container">
+
+    <div class="page-title">Student Doubts</div>
+
+    {% for i in chats %}
+    <div class="doubt-card">
+
+        <div class="student-name">
+            Student: {{ i.student.username }}
+        </div>
+
+        <div class="doubt-msg">
+            {{ i.message }}
+        </div>
+
+        <form method="POST" action="{% url 'reply' i.id %}" class="reply-form">
+            {% csrf_token %}
+            <textarea name="reply" placeholder="Write reply here..."></textarea>
+            <button type="submit">Send Reply</button>
+        </form>
+
+        {% if i.reply %}
+        <div class="old-reply">
+            <b>Previous Reply:</b> {{ i.reply }}
+        </div>
+        {% endif %}
+
+    </div>
+    {% empty %}
+    <div class="no-data">
+        No student doubts found.
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

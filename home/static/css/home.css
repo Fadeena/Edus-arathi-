@@ -1,0 +1,184 @@
+/* hero-wrapper acts as the main container for this page */
+.hero-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    /* Layer 1: The glow on the left. Layer 2: The dark right side. Layer 3: Your PNG image */
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(0, 198, 255, 0.15), transparent 50%),
+        linear-gradient(rgba(10, 20, 60, 0.85), rgba(5, 10, 30, 0.95)), 
+        url('../images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add a glowing accent to the text to match the 'glowing circuits' look */
+
+/* Adjusting the buttons to the specific neon blue palette */
+.btn-primary {
+    background: #00c6ff; /* Neon blue from the image */
+    color: #050a1e;
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 198, 255, 0.3);
+}
+
+.btn-secondary {
+    border: 1px solid rgba(0, 198, 255, 0.5);
+    color: #00c6ff;
+    background: rgba(0, 198, 255, 0.05);
+}
+
+/* Stats section with the same glow */
+
+
+.hero-content {
+    max-width: 650px;
+    animation: fadeIn 1s ease-in;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+    opacity: 0.85;
+}
+
+/* Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.btn {
+    padding: 0.75rem 1.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #ffffff;
+    color: #2b2b55;
+}
+
+.btn-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: #ffffff;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Stats */
+.stats-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+.stat-box h3 {
+    color: #00c6ff;
+    font-size: 1.6rem;
+    text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+}
+
+.stat-box p {
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* HOME BALANCE */
+:root {
+    --primary-blue: #2a52be;
+    --text-dark: #1a1a1a;
+    --text-gray: #666;
+    --bg-light: #f8f9ff;
+}
+
+.features-section {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.section-subtitle {
+    color: var(--text-gray);
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    width: 250px;
+    /* Soft shadow to match image */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-wrapper {
+    font-size: 32px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .feature-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}

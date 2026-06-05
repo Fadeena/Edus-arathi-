@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        /* 1. Global Reset & Fonts */
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* LEFT SIDE */
+    .brand-section {
+        flex: 1;
+        background: radial-gradient(circle at center, #3b82f6 0%, #1e40af 100%);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px;
+    }
+
+    .brand-content { max-width: 450px; text-align: center; }
+
+    .logo { font-size: 1.5rem; font-weight: bold; margin-bottom: 2rem; display: flex; align-items: center; justify-content: center; gap: 10px; }
+
+    .brand-section h1 { font-size: 2.2rem; margin-bottom: 1.5rem; line-height: 1.2; }
+
+    .brand-section p { opacity: 0.9; margin-bottom: 3rem; line-height: 1.6; }
+
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+
+    .stat-card {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    /* RIGHT SIDE FORM */
+    .form-section {
+        flex: 1.2;
+        background: white;
+        padding: 50px 10%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .form-header { margin-bottom: 30px; }
+
+    .form-header h2 { font-size: 2rem; color: #111827; }
+
+    .form-header p { color: #6b7280; margin-top: 8px; }
+
+    .input-group { margin-bottom: 15px; }
+
+    .input-group label { display: block; font-size: 0.875rem; font-weight: 600; color: #374151; margin-bottom: 6px; }
+
+    input, select {
+        width: 100%;
+        padding: 10px 14px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        font-size: 0.95rem;
+    }
+
+    .row { display: flex; gap: 15px; }
+    .row .input-group { flex: 1; }
+
+    .register-btn {
+        width: 100%;
+        background: #2563eb;
+        color: white;
+        padding: 14px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .login-link { text-align: center; margin-top: 20px; font-size: 0.9rem; color: #6b7280; }
+    .login-link a { color: #2563eb; text-decoration: none; font-weight: 600; }
+
+    @media (max-width: 900px) {
+        .container { flex-direction: column; }
+        .brand-section { padding: 40px 20px; }
+    }
+
+    </style>
+    
+</head>
+<body>
+   <div class="container">
+    <!-- Left Side: Branding -->
+    <div class="brand-section">
+        <div class="brand-content">
+            <div class="logo">
+                <i class="fas fa-layer-group"></i>
+                <span>Edu-Sarathi</span>
+            </div>
+            <h1>Your Intelligent Sarathi for Smarter Learning</h1>
+            <p>Experience a 24/7 AI-driven mentor designed to simplify complex concepts and provide instant clarification for every academic doubt.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>50K+</h3>
+                    <p>Active Learners</p>
+                </div>
+                <div class="stat-card">
+                    <h3>1,200+</h3>
+                    <p>Expert Courses</p>
+                </div>
+                <div class="stat-card">
+                    <h3>25+</h3>
+                    <p>Languages</p>
+                </div>
+                <div class="stat-card">
+                    <h3>94%</h3>
+                    <p>Completion Rate</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Right Side: Registration Form -->
+    <div class="form-section">
+        <div class="form-header">
+            <h2>Join the Academy</h2>
+            <p>Begin your educational journey today.</p>
+        </div>
+
+        <form method="post" action="/register/">
+            {% csrf_token %}
+            {{er}}
+            
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" name="full_name" placeholder="John Doe" required>
+            </div>
+
+            <div class="input-group">
+                <label>Email address</label>
+                <input type="email" name="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="input-group">
+                <label>Mobile Number</label>
+                <input type="tel" name="mobile" placeholder="+91 00000 00000" required>
+            </div>
+
+            <div class="row">
+                <div class="input-group">
+                    <label>Date of Birth</label>
+                    <input type="date" name="dob" required>
+                </div>
+                <div class="input-group">
+                    <label>Gender</label>
+                    <select name="gender" required>
+                         <option value="" disabled selected>--Select--</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label>Education Level</label>
+                <select name="education" required>
+                    <option value="" disabled selected>--Select--</option>
+                    <option value="10th">10th Standard</option>
+                    <option value="12th">12th Standard</option>
+                    <option value="Graduation">Graduation</option>
+                    <option value="Postgraduation">Post Graduation</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Course Preference</label>
+                <select name="course" required>
+                     <option value="" disabled selected>--Select--</option>
+                    <option value="IT">IT</option>
+                    <option value="Non-IT">Non-IT</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Role</label>
+                <select name="role" required>
+                     <option value="" disabled selected>--Select--</option>
+                    <option value="student">👨‍🎓Student</option>
+                    <option value="tutor">👨‍🏫 Tutor</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Username</label>
+                <input type="username" name="username" placeholder="••••••••" required>
+            </div>
+            <div class="input-group">
+                <label>Password</label>
+                <input type="password" name="pwd1" placeholder="••••••••" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Confirm Password</label>
+                <input type="password" name="pwd2" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="register-btn">Register Now</button>
+            <p class="login-link">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

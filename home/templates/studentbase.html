@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edu-Sarathi Student</title>
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    {% block head %}
+    {% endblock %}
+
+    {% block style %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+
+<div class="logo">
+<img src="{% static 'images/logo.jpeg' %}">
+<h2>EDU-SARATHI</h2>
+</div>
+
+<ul>
+<li class="active"><a href="{% url 'student' %}">Student Dashboard</a></li>
+<li><a href="/choosecourse">Choose Course</a></li>
+<li><a href="/mystudyplan">My Study Plan</a></li>
+<li><a href="/aitutorchat">AI tutor Chat</a></li>
+<li><a href="/activecourses">Active Courses</a></li>
+<li><a href="/chatselect">Chat with Tutor</a></li>
+<li><a href="/quiz">Quiz</a></li>
+<li><a href="/library">Library</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+
+</aside>
+
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+</body>
+</html>

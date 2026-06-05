@@ -1,0 +1,41 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+Quiz Center
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/viewquiz.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="quiz-container">
+
+    <!-- Header -->
+    <div class="quiz-header">
+        <h1>📚 Generated Questions</h1>
+        <p>Course-wise AI generated important questions for practice</p>
+    </div>
+
+    <!-- Show Questions Only -->
+    {% if quiz %}
+    <div class="result-box">
+        <pre>{{ quiz }}</pre>
+    </div>
+    {% else %}
+    <div class="result-box">
+        <h2>No Questions Available</h2>
+        <p>Please click View Questions from Quiz page.</p>
+    </div>
+    {% endif %}
+
+    <!-- Back Button -->
+    <div class="back-area">
+        <a href="{% url 'quiz' %}" class="back-btn">⬅ Back to Quiz</a>
+    </div>
+
+</div>
+
+{% endblock %}

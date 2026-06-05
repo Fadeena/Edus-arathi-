@@ -1,0 +1,102 @@
+/* addcourse.css */
+
+.main-content {
+    margin-left: 240px; /* Aligns with sidebar width */
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    color: #0f172a;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Form Card Styling */
+.form-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    max-width: 600px;
+}
+
+/* Django Form Styling (p tags) */
+.form-card form p {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-card label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+/* Styling the inputs, textareas, and selects */
+.form-card input, 
+.form-card textarea, 
+.form-card select {
+    padding: 12px 15px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: #f8fafc;
+}
+
+.form-card input:focus, 
+.form-card textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    background-color: #fff;
+}
+
+.form-card textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: #2563eb;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1000px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    
+    .form-card {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,33 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+{% block head %}
+<title>View Uploaded Material | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/library.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="main-content">
+
+    <h1>📚 My Learning Materials</h1>
+
+    {% for m in materials %}
+
+    <div class="material-card">
+
+        <h2>{{ m.title }}</h2>
+        <p>{{ m.description }}</p>
+        <p><b>Course:</b> {{ m.course.name }}</p>
+
+        <a href="{{ m.file.url }}" download>
+            📥 Download File
+        </a>
+
+    </div>
+
+    {% empty %}
+        <p>No materials available for your courses.</p>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

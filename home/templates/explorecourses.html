@@ -1,0 +1,76 @@
+<!-- templates/explore_courses.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Courses | Edu-Sarathi</title>
+    <link rel="stylesheet" href="{% static 'css/explorecourses.css' %}">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="logo">🎓 Edu-Sarathi</div>
+
+    <div class="nav-btns">
+        <a href="{% url 'home' %}" class="back-btn">← Back Home</a>
+    </div>
+</div>
+
+<section class="hero-section">
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+        <h1>Explore Our Courses</h1>
+        <p>
+            Learn from expert tutors, gain new skills, and build your future 
+            with smart AI-powered learning.
+        </p>
+    </div>
+</section>
+
+<section class="course-section">
+
+    <h2 class="section-title">Available Courses</h2>
+
+    <div class="course-container">
+
+        {% for course in courses %}
+        <div class="course-card">
+
+            <h2>{{ course.name }}</h2>
+
+            <p class="desc">
+                {{ course.description }}
+            </p>
+
+            <div class="details">
+                <span>⏱ {{ course.duration }}</span>
+                <span>📅 {{ course.created_at|date:"d M Y" }}</span>
+            </div>
+
+            <div class="card-btns">
+                <a href="/register" class="join-btn">Join Now</a>
+            </div>
+
+        </div>
+        {% empty %}
+
+        <div class="empty-box">
+            <h3>No Courses Available</h3>
+            <p>Please check again later.</p>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <p>© 2026 Edu-Sarathi | Smart Learning Platform</p>
+</footer>
+
+</body>
+</html>

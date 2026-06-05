@@ -1,0 +1,53 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block head %}
+<title>User List | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/approve.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<main class="main-content">
+    <div class="content-header">
+        <h2 class="title">Pending User Approvals</h2>
+        <p>Review and activate new accounts below.</p>
+    </div>
+
+    <div class="table-container">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Role Request</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for p in pen %}
+                <tr>
+                    <td><strong>{{ p.username }}</strong></td>
+                    <td>{{ p.email }}</td>
+                    <td>
+                        {% if p.is_staff %}
+                            <span class="badge tutor">Tutor</span>
+                        {% else %}
+                            <span class="badge student">Student</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{% url 'approveuser' p.id %}" class="btn-approve">Approve</a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="4" class="empty-msg">No pending approvals found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</main>
+
+{% endblock %}

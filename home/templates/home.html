@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<!-- This block ensures the specific CSS for the home page is loaded in the head of base.html -->
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="hero-wrapper">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>AI-Powered<br>Personalized<br>Learning Assistant</h1>
+                <p>Your intelligent companion that helps you learn better, solve doubts instantly, and achieve your academic goals.</p>
+                
+                <div class="cta-buttons">
+                    <a href="/register" class="btn btn-primary">Get Started</a>
+                    <a href="{% url 'explorecourses' %}" class="btn btn-secondary">Explore Courses</a>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-box"><h3>50K+</h3><p>Active Learners</p></div>
+                    <div class="stat-box"><h3>1,200+</h3><p>Expert Courses</p></div>          
+                    <div class="stat-box"><h3>26+</h3><p>Countries</p></div>
+                    <div class="stat-box"><h3>94+</h3><p>Languages</p></div>
+                    <div class="stat-box"><h3>94%</h3><p>Success Rate</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Edu-Sarathi?</h2>
+            <p class="section-subtitle">Smart features to accelerate your learning journey:</p>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-robot"></i></div>
+                    <h3>AI Tutor 24/7</h3>
+                    <p>Get instant answers to your academic questions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-person-chalkboard"></i></div>
+                    <h3>Personalised Learning</h3>
+                    <p>Customized study paths based on your progress.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-lightbulb"></i></div>
+                    <h3>Smart Resources</h3>
+                    <p>Access high-quality notes, videos, and quizzes.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Track Progress</h3>
+                    <p>Monitor your performance and improve on.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

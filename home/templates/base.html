@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Edu-Sarathi{% endblock %}</title>
+    
+    <!-- External Resources -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    {% block head %}{% endblock %}
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <!-- Updated Logo Section with your image -->
+            <div class="logo">
+                <img src="{% static 'images/logo.jpeg' %}" alt="Edu-Sarathi Logo" class="logo-img">
+                <span>Edu-Sarathi</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'aboutus' %}">About Us</a></li>
+                <li><a href="{% url 'explorecourses' %}">Courses</a></li>
+                <li><a href="{% url 'contactus' %}">Contact Us</a></li>
+            </ul>
+
+            <div class="auth-section">
+                <a href="{% url 'login' %}" class="btn-login">Login</a>
+                <a href="{% url 'register' %}" class="btn-register">Register</a>
+                <div class="user-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

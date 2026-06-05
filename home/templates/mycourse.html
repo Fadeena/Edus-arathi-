@@ -1,0 +1,51 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/mycourse.css' %}">
+{% endblock %}
+{% block content %}
+<main class="main-content">
+    <form method="POST" class="course-form">
+        {% csrf_token %}
+
+        <div class="header-section">
+            <h1>My Active Courses</h1>
+            <p>Courses you are currently teaching:</p>
+        </div>
+
+        <!-- TOP SECTION: Active Course Pills -->
+        <div class="active-container">
+            {% for course in courses %}
+                {% if course in my_courses %}
+                <div class="course-pill">
+                    <span>{{ course.name }}</span>
+                    <!-- Keep this ID in the list when saving -->
+                    <input type="hidden" name="courses" value="{{ course.id }}">
+                    <button type="button" class="remove-btn" onclick="this.parentElement.remove()">×</button>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+        <hr class="divider">
+
+        <!-- BOTTOM SECTION: Your requested Dropdown Style -->
+        <div class="input-group">
+            <label>Add New Course</label>
+            <select name="courses">
+                <option value="" disabled selected>--Select a Course--</option>
+                {% for course in courses %}
+                    {% if course not in my_courses %}
+                    <option value="{{ course.id }}">{{ course.name }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="save-btn">Update My Courses</button>
+        </div>
+    </form>
+</main>
+{% endblock %}

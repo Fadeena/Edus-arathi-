@@ -1,0 +1,71 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+AI Tutor Chat
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/aitutorchat.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="ai-chat-wrapper">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="header-left">
+                <h1>🤖 AI Tutor Chat</h1>
+                <p>Ask questions, upload files, and clear your doubts instantly.</p>
+            </div>
+        </div>
+
+        <!-- Chat Card -->
+        <div class="chat-card">
+
+            <!-- Result Messages -->
+            {% if reply %}
+            <div class="chat-result">
+
+                <div class="chat-message student-msg">
+                    <h4>Your Question</h4>
+                    <p>{{ request.POST.message }}</p>
+                </div>
+
+                <div class="chat-message ai-msg">
+                    <h4>AI Tutor Reply</h4>
+                    <div class="reply-content">
+                        {{ reply|linebreaks }}
+                    </div>
+                </div>
+
+            </div>
+            {% endif %}
+
+            <!-- Form -->
+            <form method="POST" enctype="multipart/form-data" class="chat-form">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label>Enter Your Doubt</label>
+                    <textarea name="message" placeholder="Type your question here..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload File / Image (Optional)</label>
+                    <input type="file" name="file">
+                </div>
+
+                <button type="submit" class="btn-send">Send to AI Tutor</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

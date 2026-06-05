@@ -1,0 +1,71 @@
+/* Main Content Layout */
+.main-content {
+    margin-left: 240px; /* Same as sidebar width */
+    padding: 40px;
+    width: 100%;
+}
+
+.header-section h1 {
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.header-section p {
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Table Styling */
+.table-container {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.user-table th {
+    padding: 15px;
+    border-bottom: 2px solid #f1f5f9;
+    color: #475569;
+    font-weight: 600;
+}
+
+.user-table td {
+    padding: 15px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+    font-size: 14px;
+}
+
+/* UI Elements */
+.status-pill {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-pill.active { background: #dcfce7; color: #166534; }
+.status-pill.inactive { background: #fee2e2; color: #991b1b; }
+
+.role-tag {
+    background: #e0e7ff;
+    color: #3730a3;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.view-btn {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.view-btn:hover { text-decoration: underline; }

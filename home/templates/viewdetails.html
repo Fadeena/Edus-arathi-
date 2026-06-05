@@ -1,0 +1,68 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block head %}
+<title>View Uploaded Material | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/viewdetail.css' %}">
+{% endblock %}
+{% block content %}
+<div class="detail-container">
+    <div class="detail-card">
+        
+        <!-- Header -->
+        <div class="detail-header">
+            <div>
+                <h1 style="margin:0;">{{ target_user.first_name }} {{ target_user.last_name }}</h1>
+                <p style="color: #64748b; margin-top: 5px;">@{{ target_user.username }}</p>
+            </div>
+            
+        </div>
+
+        <!-- Info Grid -->
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Contact Info</h3>
+                <p><strong>Email:</strong> {{ target_user.email }}</p>
+                <p><strong>Mobile:</strong> {{ profile.mobile }}</p>
+                <p><strong>Gender:</strong> {{ profile.gender }}</p>
+                <p><strong>DOB:</strong> {{ profile.dob|date:"M d, Y" }}</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Academic Profile</h3>
+                <p><strong>Education:</strong> {{ profile.education_level }}</p>
+                <p><strong>Preference:</strong> {{ profile.course_preference }}</p>
+            </div>
+        </div>
+
+        <!-- Courses -->
+        <div class="course-section">
+            <h3>{% if profile.role == 'tutor' %}Courses Being Taught{% else %}Enrolled Courses{% endif %}</h3>
+            <table class="detail-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if my_courses %}
+                        {% for course in my_courses %}
+                        <tr>
+                            <td>{{ course.name }}</td>
+                            <td>{{ course.duration }}</td>
+                        </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="2" style="text-align: center; color: #94a3b8;">
+                                No courses found for this {{profile.role}}</td>
+                        </tr>
+                    {% endif %}  
+                </tbody>
+            </table>
+        </div>
+
+        <a href="javascript:history.back()" class="btn-back">Back to List</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+<title>Select Tutor</title>
+{% endblock %}
+
+{% block style %}
+<style>
+.select-container{
+    max-width:1000px;
+    margin:30px auto;
+    padding:20px;
+}
+
+.page-title{
+    font-size:30px;
+    font-weight:700;
+    color:#2c3e50;
+    margin-bottom:25px;
+}
+
+.tutor-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.tutor-card{
+    background:#ffffff;
+    padding:25px;
+    border-radius:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    text-align:center;
+    transition:0.3s;
+}
+
+.tutor-card:hover{
+    transform:translateY(-5px);
+}
+
+.avatar{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#007bff;
+    color:#fff;
+    font-size:28px;
+    font-weight:bold;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 15px;
+}
+
+.tutor-name{
+    font-size:22px;
+    font-weight:600;
+    color:#34495e;
+    margin-bottom:8px;
+}
+
+.tutor-role{
+    color:#777;
+    margin-bottom:18px;
+}
+
+.chat-btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:#28a745;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.chat-btn:hover{
+    background:#218838;
+}
+
+.empty-box{
+    background:#fff3cd;
+    padding:20px;
+    border-radius:10px;
+    color:#856404;
+    font-size:18px;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="select-container">
+
+    <div class="page-title">Select Tutor</div>
+
+    <div class="tutor-grid">
+
+        {% for tutor in tutors %}
+        <div class="tutor-card">
+
+            <div class="avatar">
+                {{ tutor.username|slice:":1"|upper }}
+            </div>
+
+            <div class="tutor-name">
+                {{ tutor.username }}
+            </div>
+
+            <div class="tutor-role">
+                Tutor
+            </div>
+
+            <a href="{% url 'studentchat' tutor.id %}" class="chat-btn">
+                Start Chat
+            </a>
+
+        </div>
+        {% empty %}
+        <div class="empty-box">
+            No tutors available now.
+        </div>
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

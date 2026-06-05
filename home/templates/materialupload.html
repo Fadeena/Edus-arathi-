@@ -1,0 +1,44 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+{% block head %}
+<title>Material Upload | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/materialupload.css' %}">
+{% endblock %}
+{% block content %}
+<main class="main-content">
+    <div class="content-header">
+        <h1>Upload</h1>
+        <p>Add new learning resources to your courses.</p>
+    </div>
+
+    <div class="upload-container">
+        <form method="POST" enctype="multipart/form-data" class="upload-form">
+            {% csrf_token %}
+            
+            <div class="input-group">
+                <label>Course</label>
+                {{ form.course }}
+            </div>
+
+            <div class="input-group">
+                <label>Title</label>
+                {{ form.title }}
+            </div>
+
+            <div class="input-group">
+                <label>Description</label>
+                {{ form.description }}
+            </div>
+
+            <div class="input-group">
+                <label>Upload File</label>
+                <div class="file-drop-zone">
+                    {{ form.file }}
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Save</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

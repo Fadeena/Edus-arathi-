@@ -1,0 +1,93 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/choosecourse.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-content">
+
+    <div class="page-header">
+        <div class="header-info">
+            <h2>Choose Your Courses</h2>
+            <p>Select the subjects you want to add to your learning dashboard</p>
+        </div>
+    </div>
+
+    <form method="POST" class="course-selection-form">
+        {% csrf_token %}
+
+        <div class="course-grid">
+            {% for course in courses %}
+            <div class="course-item">
+
+                <input type="checkbox"
+                       name="courses"
+                       id="course-{{ course.id }}"
+                       value="{{ course.id }}"
+                       {% if course in my_courses %}checked{% endif %}>
+
+                <label for="course-{{ course.id }}" class="course-card">
+
+                    <div class="selection-indicator">
+                        <span class="check-icon">✓</span>
+                    </div>
+
+                    <div class="course-content">
+                        <h3>{{ course.name }}</h3>
+                        <p>{{ course.description|truncatewords:15 }}</p>
+
+                        <div class="course-footer">
+                            {% if course.duration %}
+                            <span class="duration-tag">
+                                <i>⏱</i> {{ course.duration }}
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                </label>
+
+            </div>
+            {% empty %}
+            <div class="empty-courses">
+                <p>No courses are currently available to join.</p>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="action-bar">
+            <button type="submit" class="save-btn">
+                Confirm & Save Selection
+            </button>
+        </div>
+
+        <!-- EXTRA BOTTOM SECTION -->
+        {% if my_courses %}
+        <div class="bottom-selected-section">
+
+            <div class="selected-title">
+                <h3>My Selected Courses</h3>
+                <p>Courses already added to your dashboard</p>
+            </div>
+
+            <div class="active-container">
+                {% for course in my_courses %}
+                <div class="course-pill">
+                    <span>{{ course.name }}</span>
+
+                    {% if course.duration %}
+                    <small>{{ course.duration }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+
+        </div>
+        {% endif %}
+
+    </form>
+
+</main>
+{% endblock %}

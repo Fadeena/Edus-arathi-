@@ -1,0 +1,98 @@
+/* Container Alignment */
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+    width: calc(100% - 240px);
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: #f4f7fc;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    font-size: 26px;
+    color: #0f172a;
+    margin: 0;
+}
+
+/* Stacked Layout */
+.quiz-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px; /* Limits width for better readability on large screens */
+}
+
+/* Card Styling */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 15px 25px;
+    border-bottom: 1px solid #e2e8f0;
+    background: #f8fafc;
+    font-weight: 600;
+    color: #1e3a8a;
+    font-size: 16px;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* Input & Button Styling */
+.form-group input {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    outline-color: #2563eb;
+}
+
+.generate-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.generate-btn:hover {
+    background: #1d4ed8;
+}
+
+/* Quiz Content Styling */
+.quiz-content {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 6px;
+    line-height: 1.8;
+    color: #334155;
+    font-size: 15px;
+    border-left: 4px solid #2563eb;
+}
+
+/* Mobile Responsive */
+@media(max-width: 1000px){
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}

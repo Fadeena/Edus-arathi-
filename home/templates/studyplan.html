@@ -1,0 +1,69 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/studyplan.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="header-banner">
+        <div class="header-text">
+            <h2>My Study Plan</h2>
+            <p>Your AI-powered personalized learning journey</p>
+        </div>
+    </div>
+
+    <div class="study-grid">
+        <!-- Sidebar Info -->
+        <div class="info-sidebar">
+            <div class="welcome-card">
+                <div class="user-avatar">
+                    {{ request.user.first_name|first|upper }}
+                </div>
+                <h3>Welcome, {{ request.user.first_name }}!</h3>
+                <p>Consistent effort leads to mastery. Follow your daily path to reach your goals.</p>
+                
+                <div class="stats-mini">
+                    <div class="stat-item">
+                        <span class="stat-icon">📅</span>
+                        <span>7 Day Sprint</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎯</span>
+                        <span>Daily Tasks</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🤖</span>
+                        <span>AI Guided</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI Path Content -->
+        <div class="path-container">
+            <div class="path-header">
+                <h3>Today's Learning Path</h3>
+                <div class="status-indicator">
+                    <span class="pulse"></span> Active Plan
+                </div>
+            </div>
+
+            <div class="path-content">
+                {% if plan %}
+                    <div class="ai-response">
+                        {{ plan|linebreaks }}
+                    </div>
+                {% else %}
+                    <div class="empty-state">
+                        <div class="empty-icon">📂</div>
+                        <p>No study plan generated yet.</p>
+                        <small>Complete your profile or request a plan to see it here.</small>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}

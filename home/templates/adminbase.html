@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edu-Sarathi Admin</title>
+    <link rel="stylesheet" href="{% static 'css/admin.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    {% block head %}
+    {% endblock %}
+
+    {% block style %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+<aside class="sidebar">
+
+<div class="logo">
+<img src="{% static 'images/logo.jpeg' %}">
+<h2>EDU-SARATHI</h2>
+</div>
+
+<ul>
+<li class="active"><a href="/adminhome">Admin Dashboard</a></li>
+<li><a href="/pendinguser">Approve User</a></li>
+<li><a href="/aduserlist">User List</a></li>
+<li><a href="/adaddcourse">Add Course</a></li>
+<li><a href="/viewcourses">View courses</a></li>
+<li><a href="/courseanalysis">Course Analytics</a></li>
+<li><a href="/logout">Logout</a></li>
+</ul>
+
+</aside>
+
+
+{% block content %}
+{% endblock %}
+
+</div>
+
+</body>
+</html>

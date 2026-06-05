@@ -1,0 +1,26 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/addcourse.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <div class="page-header">
+        <h2>Add Course</h2>
+        <p>Fill in the details to launch a new learning module.</p>
+    </div>
+
+    <div class="form-card">
+
+        <form method="POST">
+            {% csrf_token %}
+            {{fm.as_p}}
+            <button type="submit" class="submit-btn">
+                + Create Course
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}

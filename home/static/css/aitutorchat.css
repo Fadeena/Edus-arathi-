@@ -1,0 +1,222 @@
+/* ===============================
+   AI Tutor Chat Page
+================================= */
+
+.ai-chat-wrapper{
+    padding:40px;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* Header */
+.chat-header{
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    color:#fff;
+    padding:30px;
+    border-radius:18px;
+    margin-bottom:25px;
+    box-shadow:0 10px 30px rgba(37,99,235,0.18);
+}
+
+.chat-header h1{
+    font-size:32px;
+    font-weight:800;
+    margin-bottom:8px;
+}
+
+.chat-header p{
+    font-size:15px;
+    opacity:0.95;
+    margin:0;
+}
+
+/* Main Card */
+.chat-card{
+    background:#ffffff;
+    border-radius:20px;
+    padding:30px;
+    box-shadow:0 10px 35px rgba(0,0,0,0.06);
+}
+
+/* Result Area */
+.chat-result{
+    margin-bottom:30px;
+}
+
+/* Common Message Box */
+.chat-message{
+    padding:22px;
+    border-radius:16px;
+    margin-bottom:18px;
+    line-height:1.8;
+    word-wrap:break-word;
+}
+
+.chat-message h4{
+    margin-bottom:12px;
+    font-size:16px;
+    font-weight:700;
+}
+
+/* Student Message */
+.student-msg{
+    background:#eff6ff;
+    border-left:5px solid #2563eb;
+}
+
+.student-msg h4{
+    color:#1d4ed8;
+}
+
+/* AI Message */
+.ai-msg{
+    background:#f8fafc;
+    border-left:5px solid #10b981;
+}
+
+.ai-msg h4{
+    color:#059669;
+}
+
+/* Reply Content */
+.reply-content{
+    color:#1e293b;
+    font-size:15px;
+    line-height:1.9;
+    white-space:pre-wrap;
+}
+
+/* Paragraph */
+.reply-content p{
+    margin-bottom:14px;
+}
+
+/* Bold text */
+.reply-content strong{
+    color:#0f172a;
+    font-weight:700;
+}
+
+/* Inline code */
+.reply-content code{
+    background:#e2e8f0;
+    color:#0f172a;
+    padding:3px 8px;
+    border-radius:6px;
+    font-size:14px;
+}
+
+/* Code blocks */
+.reply-content pre{
+    background:#0f172a;
+    color:#ffffff;
+    padding:15px;
+    border-radius:12px;
+    overflow-x:auto;
+    margin:15px 0;
+    line-height:1.6;
+}
+
+/* Lists */
+.reply-content ul,
+.reply-content ol{
+    margin-left:20px;
+    margin-bottom:15px;
+}
+
+/* Horizontal divider */
+.reply-content hr{
+    border:none;
+    border-top:1px solid #e2e8f0;
+    margin:18px 0;
+}
+
+/* Form */
+.chat-form{
+    margin-top:10px;
+}
+
+.form-group{
+    margin-bottom:20px;
+}
+
+.chat-form label{
+    display:block;
+    font-size:14px;
+    font-weight:600;
+    color:#334155;
+    margin-bottom:8px;
+}
+
+.chat-form textarea,
+.chat-form input[type="file"]{
+    width:100%;
+    border:1px solid #e2e8f0;
+    border-radius:12px;
+    padding:14px;
+    font-size:14px;
+    background:#f8fafc;
+    transition:0.3s ease;
+}
+
+/* Textarea */
+.chat-form textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+/* Focus */
+.chat-form textarea:focus,
+.chat-form input[type="file"]:focus{
+    outline:none;
+    border-color:#2563eb;
+    background:#fff;
+    box-shadow:0 0 0 4px rgba(37,99,235,0.10);
+}
+
+/* Button */
+.btn-send{
+    width:100%;
+    border:none;
+    padding:15px;
+    font-size:15px;
+    font-weight:700;
+    border-radius:12px;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(135deg,#2563eb,#1d4ed8);
+    transition:0.3s ease;
+}
+
+.btn-send:hover{
+    transform:translateY(-2px);
+    box-shadow:0 12px 24px rgba(37,99,235,0.20);
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .ai-chat-wrapper{
+        padding:20px;
+    }
+
+    .chat-header{
+        padding:22px;
+    }
+
+    .chat-header h1{
+        font-size:24px;
+    }
+
+    .chat-card{
+        padding:20px;
+    }
+
+    .chat-message{
+        padding:16px;
+    }
+
+    .chat-form textarea{
+        min-height:150px;
+    }
+}

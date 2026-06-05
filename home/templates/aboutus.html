@@ -1,0 +1,117 @@
+<!-- templates/aboutus.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Edu-Sarathi</title>
+    <link rel="stylesheet" href="{% static 'css/aboutus.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">🎓 Edu-Sarathi</div>
+
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'explorecourses' %}">Courses</a>
+        <a href="{% url 'contactus' %}">Contact</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>About Edu-Sarathi</h1>
+        <p>
+            Your AI-Powered Personalized Learning Assistant designed to make education smarter, easier, and more engaging.
+        </p>
+
+        <a href="{% url 'home' %}" class="hero-btn">Back to Home</a>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+
+    <div class="about-text">
+        <h2>Who We Are</h2>
+        <p>
+            Edu-Sarathi is an innovative educational platform created to transform traditional learning into an intelligent digital experience.
+            We combine modern technology with AI-powered tools to support students, tutors, and administrators in one smart ecosystem.
+        </p>
+
+        <p>
+            Our mission is to provide personalized learning experiences where students can learn at their own pace,
+            clear doubts instantly, attend quizzes, track progress, and access quality learning materials anytime.
+        </p>
+    </div>
+
+    <div class="about-image">
+        <img src="{% static 'images/logo.jpeg' %}" alt="Edu-Sarathi">
+    </div>
+
+</section>
+
+<!-- Features -->
+<section class="features">
+
+    <h2>Why Choose Edu-Sarathi?</h2>
+
+    <div class="feature-grid">
+
+        <div class="card">
+            <h3>🤖 AI Tutor Chat</h3>
+            <p>24/7 intelligent doubt clearing and student guidance support.</p>
+        </div>
+
+        <div class="card">
+            <h3>📚 Smart Courses</h3>
+            <p>Explore multiple courses with structured materials and expert mentors.</p>
+        </div>
+
+        <div class="card">
+            <h3>📝 Quiz Generator</h3>
+            <p>Practice MCQ exams and improve learning performance instantly.</p>
+        </div>
+
+        <div class="card">
+            <h3>📈 Progress Tracking</h3>
+            <p>Monitor academic growth and performance with smart dashboards.</p>
+        </div>
+
+        <div class="card">
+            <h3>📂 Material Upload</h3>
+            <p>Tutors can upload notes, videos, and study materials easily.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔒 Secure Platform</h3>
+            <p>Safe login system with dedicated admin, tutor, and student panels.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Vision -->
+<section class="vision">
+
+    <h2>Our Vision</h2>
+
+    <p>
+        To become the future of digital education by making learning accessible, personalized,
+        and powered by intelligent technology for every student.
+    </p>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Edu-Sarathi | Learn Smart, Grow Faster 🚀</p>
+</footer>
+
+</body>
+</html>

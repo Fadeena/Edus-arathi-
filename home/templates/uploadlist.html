@@ -1,0 +1,32 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+{% block head %}
+<title>View Uploaded Material | Edu-Sarathi</title>
+<link rel="stylesheet" href="{% static 'css/uploadlist.css' %}">
+{% endblock %}
+{% block content %}
+<main class="main-content">
+    <div class="page-header">
+        <h2>Study Materials</h2>
+        <p>Access and download your course resources</p>
+    </div>
+
+    <div class="materials-grid">
+        {% for i in material %}
+        <div class="material-card">
+            <span class="course-badge">{{ i.course.name }}</span>
+            <h3>{{ i.title }}</h3>
+            <p class="description">{{ i.description }}</p>
+            
+            <div class="card-footer">
+                <a href="{{ i.file.url }}" class="download-btn" download>
+                    <span class="icon">⬇</span> Download Material
+                </a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="empty-state">No study materials available yet.</p>
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

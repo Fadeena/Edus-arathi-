@@ -1,0 +1,60 @@
+{% extends 'studentbase.html' %}
+{% load static %}
+
+{% block head %}
+Active Courses
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/activecourse.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+
+    <div class="course-wrapper">
+
+        <!-- Header -->
+        <div class="course-header">
+            <h1>📚 Active Courses</h1>
+            <p>List of enrolled subjects with direct links to lessons</p>
+        </div>
+
+        <!-- Course Grid -->
+        <div class="course-grid">
+
+            {% for i in activecourses %}
+            <div class="course-card">
+
+                <h2>{{ i.name }}</h2>
+
+                <p class="desc">
+                    {{ i.description }}
+                </p>
+
+                <div class="course-info">
+                    <span>⏳ {{ i.duration }}</span>
+                </div>
+
+                <a href="/coursedetails/{{ i.id }}" class="btn-view">
+                    View Lessons
+                </a>
+
+            </div>
+            {% empty %}
+
+            <div class="empty-box">
+                <h3>No Active Courses</h3>
+                <p>You have not enrolled in any subjects yet.</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

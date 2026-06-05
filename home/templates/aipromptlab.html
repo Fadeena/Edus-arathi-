@@ -1,0 +1,74 @@
+{% extends 'tutorbase.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'css/aipromptlab.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main-content">
+    <div class="ai-wrapper">
+
+        <div class="ai-header">
+            <h2>🤖 AI Prompt Lab</h2>
+            <p>Customize AI teaching style and behavior for your assigned courses.</p>
+        </div>
+
+        <div class="ai-card">
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="form-grid">
+                    <div>
+                        <label>Select Course</label>
+                        {{ form.course }}
+                    </div>
+
+                    <div>
+                        <label>Prompt Title</label>
+                        {{ form.title }}
+                    </div>
+
+                    <div>
+                        <label>Prompt Type</label>
+                        {{ form.prompt_type }}
+                    </div>
+
+                    <div>
+                        <label>Explanation</label>
+                        <select name="tone">
+                            <option>Simple</option>
+                            <option>Detailed</option>
+                            <option>Professional</option>
+                            <option>Interactive</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label>AI Personality</label>
+                        <select name="personality">
+                            <option value="" disabled selected>Choose Personality</option>
+                            <option value="friendly">Friendly</option>
+                            <option value="strict">Strict</option>
+                            <option value="motivational">Motivational</option>
+                            <option value="professional">Professional</option>
+                            <option value="beginner">Beginner Friendly</option>
+                        </select>
+                    </div>      
+
+                    <div class="full-width">
+                        <label>Custom Prompt</label>
+                        {{ form.custom_prompt }}
+                    </div>
+                </div>
+
+                <div class="btn-area">
+                    <button type="submit" class="btn-save">Save Prompt</button>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</main>
+{% endblock %}

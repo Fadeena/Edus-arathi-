@@ -1,0 +1,75 @@
+<!-- templates/contactus.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Edu-Sarathi</title>
+    <link rel="stylesheet" href="{% static 'css/contactus.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">🎓 Edu-Sarathi</div>
+
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'aboutus' %}">About</a>
+        <a href="{% url 'explorecourses' %}">Courses</a>
+    </nav>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Contact Us</h1>
+        <p>
+            We’re here to help you learn smarter. Reach out to Edu-Sarathi anytime.
+        </p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+
+    <!-- Left Side -->
+    <div class="contact-info">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            Have questions about courses, login issues, tutors, or support?  
+            Send us a message and our team will reply soon.
+        </p>
+
+        <div class="info-box">
+            <h4>📍 Address</h4>
+            <p>Kerala, India</p>
+        </div>
+
+        <div class="info-box">
+            <h4>📞 Phone</h4>
+            <p>+91 98765 43210</p>
+        </div>
+
+        <div class="info-box">
+            <h4>📧 Email</h4>
+            <p>support@edusarathi.com</p>
+        </div>
+
+        <div class="info-box">
+            <h4>🕒 Working Hours</h4>
+            <p>Monday - Saturday : 9 AM to 6 PM</p>
+        </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>© 2026 Edu-Sarathi | Smart Learning Support 🚀</p>
+</footer>
+
+</body>
+</html>

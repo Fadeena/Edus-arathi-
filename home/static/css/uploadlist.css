@@ -1,0 +1,97 @@
+/* Layout Alignment */
+.main-content {
+    margin-left: 240px;
+    padding: 40px;
+    background: #f4f7fc;
+    min-height: 100vh;
+}
+
+.page-header {
+    margin-bottom: 30px;
+}
+
+.page-header h2 {
+    color: #0f172a;
+    font-size: 26px;
+    margin: 0;
+}
+
+.page-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Grid System */
+.materials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Material Card Style */
+.material-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-5px);
+}
+
+.course-badge {
+    background: #e0e7ff;
+    color: #4338ca;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 12px;
+}
+
+.material-card h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #1e293b;
+}
+
+.description {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+/* Download Button */
+.download-btn {
+    display: block;
+    text-align: center;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.download-btn:hover {
+    background: #1e40af;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1000px) {
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
